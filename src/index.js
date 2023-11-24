@@ -7,6 +7,9 @@ import Header from './components/Header/index.js';
 import Home from './routes/Home.js';
 import Pets from './routes/Pets.js';
 import Adopters from './routes/Adopters.js';
+import AddPets from './routes/AddPets.js';
+import AddInquiry from './routes/AddInquiry.js';
+import Inquiries from './routes/Inquiry.js';
 
 
 const GlobalStyle = createGlobalStyle` 
@@ -37,6 +40,9 @@ root.render(
       <Header />
       <Routes>
         <Route path='/pets' element={<Pets/>} />
+        <Route path='/pets/add' element={<AddPets/>} />
+        <Route path='/inquiries/add' element={<AddInquiry/>} />
+        <Route path='/inquiries' element={<Inquiries/>} />
         <Route path='/adopters' element={<Adopters/>} />
         <Route path='/' element={<Home />} />
       </Routes>

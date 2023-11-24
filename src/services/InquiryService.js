@@ -1,16 +1,16 @@
 import axios from "axios";
 
-const petsAPI = axios.create({baseURL: "http://localhost:4000/pets"});
+const inquiriesAPI = axios.create({baseURL: "http://localhost:4000/inqs"});
 
 
-async function getPets() {
-    const response = await petsAPI.get('/');
+async function getInquiries() {
+    const response = await inquiriesAPI.get('/');
     return response.data
 }
 
-async function addPet(pet) {
+async function addInquiry(inquiry) {
     try {
-        const response = await petsAPI.post("/", JSON.stringify(pet), {
+        const response = await inquiriesAPI.post("/", JSON.stringify(inquiry), {
             headers: {
                 'Content-Type': 'application/json'
               },
@@ -28,6 +28,6 @@ async function addPet(pet) {
 }
 
 export {
-    getPets,
-    addPet
+    getInquiries,
+    addInquiry
 }

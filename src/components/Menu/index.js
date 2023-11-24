@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const menuOptions = ['Pets', 'Adoptions', 'Adopters'];
+const menuOptions = ['Pets', 'Inquiries', 'Adopters'];
 
 const MenuContainer = styled.li`
 font-size: 16px;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { getPets } from '../services/PetService.js';
+import { useNavigate } from "react-router-dom"
 
 const AppContainer = styled.div`
       width: 100vw;
@@ -10,8 +11,8 @@ const AppContainer = styled.div`
       flex-direction: column;
     }
 `
-
 function Pets() {
+  const navigate = useNavigate()
   const [pets, setPets] = useState([]);
 
   async function fetchPets() {
@@ -21,16 +22,20 @@ function Pets() {
 
   useEffect(() => {
     fetchPets()
-  }, []);
+  }, [])
+
+
+  const handleAddPet = () => {
+    navigate("/pets/add")
+  }
 
   return (
     <AppContainer>
+      <button onClick={() => handleAddPet()}>Add Pet</button>
       {pets.map( pet => (
         <section>
-          <p>{pet.id} </p>
-          <p>{pet.name} </p>
-
-          <p>{pet.specie}</p> 
+          <p>Name: {pet.name} </p>
+          <p>Specie: {pet.specie}</p> 
         </section>
       ))}
     </AppContainer> 

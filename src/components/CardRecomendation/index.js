@@ -21,7 +21,7 @@ const SubTitle = styled.h4`
     margin: 15px 0;
 `
 
-const Button = styled.button`
+export const Button = styled.button`
     background-color: #EB9B00;
     color: #FFF;
     padding: 10px 0px;

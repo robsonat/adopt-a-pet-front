@@ -1,3 +1,6 @@
+import Header from '../components/Header/index.js';
+import Search from '../components/Search/index.js';
+import Recents from '../components/Recents/index.js';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { getAdopters } from '../services/AdoptersService.js';
@@ -21,7 +24,8 @@ function Adopters() {
 
   useEffect(() => {
     fetchAdoopters()
-  }, []);
+  }, [])
+
 
   return (
     <AppContainer>

@@ -9,9 +9,8 @@ background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
 color: #FFF;
 text-align: center;
 padding: 85px 0;
-height: fit-content;
+height: 470px;
 width: 100%;
-margin: 50px 0;
 `
 const Title = styled.h2`
 color: #FFF;
@@ -61,11 +60,11 @@ function Search() {
 
     return(
            <SearchContainer>
-                <Title>Find your best friend</Title>
-                <SubTitle>You can search by "DOG" or "CAT"</SubTitle>
+                <Title>Aqui você pode encontrar seu melhor amigo</Title>
+                <SubTitle>Pesquise por "DOG" ou "CAT" para encontrar </SubTitle>
                 <Input
                 placeholder="Input any specie here"
-                onBlur={ event => {
+                onInputCapture={ event => {
                     const param = event.target.value;
                     const result = pets.filter( obj => obj.specie.includes(param));
                     setTextInputed(result);
@@ -76,7 +75,6 @@ function Search() {
                             <h3>{obj.name}</h3>
                             <p>{obj.specie}</p>
                             <p>{obj.sex}</p>
-                           /* <img src={"./src/assets/logo.svg"} alt="Suporte-A-Imagens-Estará-Disponível-Em-Breve"/> */
                         </Resultado>                
                         )
                  ) }              
