@@ -10,6 +10,7 @@ const AppContainer = styled.div`
       flex-direction: column;
     }
 `
+
 function Pets() {
   const [pets, setPets] = useState([]);
 
@@ -20,14 +21,15 @@ function Pets() {
 
   useEffect(() => {
     fetchPets()
-  }, [])
-
+  }, []);
 
   return (
     <AppContainer>
       {pets.map( pet => (
         <section>
+          <p>{pet.id} </p>
           <p>{pet.name} </p>
+
           <p>{pet.specie}</p> 
         </section>
       ))}

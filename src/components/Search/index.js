@@ -9,8 +9,9 @@ background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
 color: #FFF;
 text-align: center;
 padding: 85px 0;
-height: 470px;
+height: fit-content;
 width: 100%;
+margin: 50px 0;
 `
 const Title = styled.h2`
 color: #FFF;
