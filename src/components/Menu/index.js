@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const menuOptions = ['Pets', 'Adoptions', 'Adopters'];
 
@@ -19,7 +20,11 @@ display: flex;
 function AppMenu() {
     return ( 
         <MenuContainer>
-            { menuOptions.map( (text) => (<Options><p>{text}</p></Options>)) }
+            { menuOptions.map( (text) => (
+                <Link to={`/${text.toLowerCase()}`}>
+                    <Options><p>{text}</p></Options>
+                </Link> 
+            )) }
         </MenuContainer>
         )
 }

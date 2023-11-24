@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+import reportWebVitals from './reportWebVitals.js';
 import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from './components/Header/index.js';
+import Home from './routes/Home.js';
+import Pets from './routes/Pets.js';
+import Adopters from './routes/Adopters.js';
 
 
-const GlobalStyle = createGlobalStyle`
-
+const GlobalStyle = createGlobalStyle` 
       body {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -25,15 +27,20 @@ const GlobalStyle = createGlobalStyle`
       li {
         list-style: none;
       }  
-
-
 `
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path='/pets' element={<Pets/>} />
+        <Route path='/adopters' element={<Adopters/>} />
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -1,18 +1,21 @@
 import styled from "styled-components";
 
 const Input = styled.input`
-        border-radius: 8px;
-        border: 1px solid var(--neutral-7, #C2C3CF);
-        background: var(--neutral-1, #FFF);
+order: 1px solid #FFF;
+text-align: center;
+background: transparent;
+border: 1px solid #FFF;
+padding: 20px 140px;
+border-radius: 50px;
+width: 200px;
+color: #FFF;
+font-size: 16px;
+margin-bottom: 30px;
 
-        /* drop-shadow/active-2px-spread */
-        box-shadow: 0px 0px 0px 2px #0055B8;
-
-        display: flex;
-        margin: 20px auto;
-        width: 700px;
-        padding: 12px 12px 12px 16px;
-        align-items: center;
+&::placeholder {
+    color: #FFF;
+    font-size: 16px;
+}
 
 `
 

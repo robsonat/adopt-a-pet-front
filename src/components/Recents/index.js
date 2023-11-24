@@ -1,47 +1,45 @@
-import { pets } from './recentItems'
-import styled from 'styled-components'
-import { Title } from '../Title'
-import CardRecomenda from '../Card'
+import { pets} from "./dados.js"
+import styled from "styled-components";
+import { Title } from "../Title/index.js";
+import CardRecomendation from "../CardRecomendation/index.js";
 
 const RecentsContainer = styled.section`
-padding-bottom: 20px;
-display: flex;
-flex-direction: column; 
+    background-color: #EBECEE;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 `
 
-const NewPets = styled.div`
-margin-top: 30px;
-display: flex;
-width: 100%;
-justify-content: center;
-cursor: pointer;
-gap: 2px;
+const RecentPets = styled.div`
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    cursor: pointer;
 `
 
-function Recents() {
-    return(
+function Recents () {
+    return (
         <RecentsContainer>
-                <Title 
-                cor='orange' 
-                fSize ="48px" 
-                >Last Pets availables
+            <Title
+            cor="#EB9B00"
+            tamanhoFonte="36px"
+            > 
+            Last pets added
             </Title>
-
-            <Title >Last Pets availables</Title>
-            
-            <NewPets>
-                {pets.map( obj =>( <img src={obj.src} /> ))}
-            </NewPets>   
-            {/* <Card
-                title="Teste"
-                subTitle="kkkk"
-                description="hahusjhiaheuheauiheauiheauie"
-                img="https://picsum.photos/200/300?grayscale"
-            />  */}
-
-           
-        </RecentsContainer>      
-    )
+            <RecentPets>
+                {pets.map ( pet => (
+                    <img src={pet.src} alt="..."/>
+                ))}
+            </RecentPets>
+            <CardRecomendation
+                title={"Venha me conhecer"}
+                subTitle={"Meu nome é ..."}
+                desc={"Essas são as minhas carac"}
+                img={"https://picsum.photos/id/237/200/300"}
+            />
+        </RecentsContainer>
+    );
 }
 
 export default Recents
